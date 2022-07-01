@@ -1,5 +1,5 @@
-let str1 = "cattl"
-let str2 = "acttl"
+let str1 = "aacc"
+let str2 = "ccac"
 
 function checkAnagram(str1,str2){
     let obj1 = {} //taking empty object to map alphabet as a key and frequency as a value

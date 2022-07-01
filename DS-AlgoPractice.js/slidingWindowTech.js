@@ -85,6 +85,7 @@
 
 //str1 = "abbcdafeegh"
 //output =bcdafe
+//output = 6
 var lengthOfLongestSubstring = function(s) {
     let start = 0 
     let end  =0 
@@ -104,4 +105,4 @@ var lengthOfLongestSubstring = function(s) {
     }
  return maxLength
  };
- console.log(lengthOfLongestSubstring("abbcddacdef"))
+ console.log(lengthOfLongestSubstring("abbcdafeegh"))

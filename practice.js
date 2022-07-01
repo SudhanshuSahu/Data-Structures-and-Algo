@@ -225,3 +225,226 @@
 
 // console.log(valueEqualToIndex([15, 2, 45, 12, 35],5));
 
+
+
+// 	function findMajority(arr)
+// 	{
+// 		let map = new Map();
+
+// 		for(let i = 0; i < arr.length; i++) {
+// 			if (map.has(arr[i])) {
+// 					let count = map.get(arr[i]) +1;
+// 					if (count >= parseInt(arr.length /2)) {
+					
+// 						return arr[i]
+// 					} else
+// 						map.set(arr[i], count);
+
+// 			}
+// 			else
+// 				map.set(arr[i],1);
+// 			}
+// 			return "no majority"
+// 	}
+	
+// // Driver Code
+// 	let a = [1,1,2,2];
+		
+	// console.log(findMajority(a));
+
+
+    // let a = 5
+    // let b = 10
+    //  a = a+b // 15
+    //  b = a-b // 5
+    //  a =a-b // 10
+    //  console.log(a,",",b);
+
+
+    // function maxSum(arr){
+    //     let i = 0
+    //     let k = arr.length-1
+    //     let max = 0
+    //     sum = 0
+    //     while(i<k){
+    //         sum = arr[i]+arr[k]
+    //         if(sum>max){
+    //             max++
+    //         }
+    //         if()
+    //     }
+
+    // }
+    // let arr = [12,4,67,2,34]
+
+
+
+    //*********************revision********************** */
+    // function power(base,exp){
+    //   if(exp == 0) return 1
+    //   let pow = base*power(base,exp-1)
+    //     return pow
+    // }
+    // console.log(power(2,4));
+
+//0,1,1,2,3,5
+//    function fib(num){
+//       if(num <= 3) return 1
+//      return fib(num-2)+fib(num-1)
+//     }
+//     console.log(fib());
+
+//    function prod(num,n){
+//       if(n==0) return num[n]
+//      return num[n]*prod(num,n-1)
+//     }
+//     console.log(prod([1,2,3,4,5]),5);
+
+//     function pal(str) {
+//      let i =0
+//      let k = str.length-1        
+//      while(i<k){
+//         if(str[i]==str[k]){
+//             i++
+//             k--
+//         }
+//         else{
+//             return "Not a palindrome"
+//         }
+//      }
+//      return "Palindrome"
+//     }
+// console.log(pal("atta"));
+
+
+//*****************ROTATE ARRAY**************************** */
+// function rotate(arr, val) {
+//     let i=0;j=arr.length-1
+//     const swap=(arr,i,j)=>{
+//       while(i<j){
+//         arr[i]=arr[i]+arr[j]
+//         arr[j]=arr[i]-arr[j]
+//         arr[i]=arr[i]-arr[j]
+//         i++
+//         j--
+//       }
+        
+//     }
+//     swap(arr,i,j)
+//     i=0
+//     j=val-1
+//     swap(arr,i,j)
+//     i=val
+//     j=arr.length-1
+//     swap(arr,i,j)
+    
+//     return arr
+// //   }
+      
+// //   console.log(rotate([1, 2, 3, 4, 5, 6],3))
+
+
+
+
+//   function swap(arr,i,j){
+//      i = 0 
+//      j = arr.length-1
+//     while(i<j){
+//         arr[i] = arr[i]+arr[j]
+//         arr[j] = arr[i]-arr[j]
+//         arr[i]= arr[i]-arr[j]
+//         i++
+//         j--
+//     }
+//     return arr            //4,3,2,1
+//   }
+//   function rotate(arr,k){    //3,4,1,2
+
+//   return   swap(arr,k-1)
+//   }
+//  console.log(rotate([1,2,3,4],2));
+
+
+
+// function foo(num){
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function uniqueArr(arr){
+//     let freq = new Map()
+//     for(let i=0 ; i<arr.length ; i++){
+//         if(freq.get(arr[i])==undefined){
+//             freq.set(arr[i],1)
+//         }
+//         else
+//         freq.set(arr[i],freq.get(arr[i])+1)
+//     }
+
+//      let count = 0
+//      for(let pairs of freq){
+//         if(pairs[1]==1) count++
+//      }
+//     return count
+//     }
+//     console.log(uniqueArr([9,8,7,6,5,4,3,2,1,0,12,13,14,21,45,65,23,34,54,56]));
+
+
+
+
+
+
+// function print1(){
+//     console.log("1");
+// }
+
+
+// let create = async function(){
+//     await setTimeout(create,3000);
+// }
+// function print3(){
+//     console.log("3");
+// }
+
+// print1()
+ 
+// print3()
+
+
+
+
+
+//*******************max sum of 3 consecutive sum *******/
+function maxSum(arr){
+let maxSum = 0
+let sum = 0
+for(let i = 0 ; i < 3 ; i++){
+    sum += arr[i]
+}
+char = ""
+maxSum = sum
+i = 3
+while(i<arr.length){
+    sum += arr[i]-arr[i-3]
+    if(sum>maxSum){
+        maxSum=sum
+    }
+    i++
+}
+return [maxSum]
+
+}
+let arr = [8,1,3,9,6,2,11,7]
+console.log(maxSum(arr));

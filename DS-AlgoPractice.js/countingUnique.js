@@ -16,3 +16,45 @@ function count(arr){
     
     const arr =count([1,2,2,3,4,6,7,8,9,9,9])
     console.log(arr)
+
+    function uniqueArr(arr){
+    let freq = new Map()
+    for(let i=0 ; i<arr.length ; i++){
+        if(freq.get(arr[i])==undefined){
+            freq.set(arr[i],1)
+        }
+        else
+        freq.set(arr[i],freq.get(arr[i])+1)
+    }
+ 
+    console.log(freq);
+     let res= []
+     for(let pairs of freq){
+        if(pairs[1]==1) res.push(pairs[0])
+     }
+    return res
+    }
+    console.log(uniqueArr([1,1,2,22,3,5,11,2]));
+
+    //__________________________________________________________________________________________________________//
+    
+//*******************filter out unique element in array**************************************
+function uniqueArr(arr){
+    let freq = new Map()
+    for(let i=0 ; i<arr.length ; i++){
+        if(freq.get(arr[i])==undefined){
+            freq.set(arr[i],1)
+        }
+        else
+        freq.set(arr[i],freq.get(arr[i])+1)
+    }
+ 
+    console.log(freq);
+     let res= []
+     for(let pairs of freq){
+        if(pairs[1]==1) res.push(pairs[0])
+     }
+    return res
+    }
+    console.log(uniqueArr([1,1,2,22,3,5,11,2]));
+
