@@ -116,30 +116,7 @@
 // }
 // console.log(fib(3)); // 0,1,1
 
-//************************ binary search algorithm*******************/
-// function binary(arr,k){
-// let start = 0
-// let end = arr.length-1
-// let mid;
-// if(arr.length%2 !=0){
-// mid = (start+end)/2
-// }
-// else{
-//     mid = Math.round((start+end)/2)
-// }
-// while(start<=end){
-// if(arr[mid]==k) return mid
-// if(k>arr[mid]){
-//     start = mid+1
-// }
-// else{
-//     end = mid-1
-// }
-// mid = Math.round((start+end)/2)
-// }
-// return -1
-// }
-// console.log(binary([4,6,8,10,12,24],4));
+
 
 //////////////////******************************************* */
 // function even(a,b) {
@@ -427,24 +404,169 @@
 
 
 //*******************max sum of 3 consecutive sum *******/
-function maxSum(arr){
-let maxSum = 0
-let sum = 0
-for(let i = 0 ; i < 3 ; i++){
-    sum += arr[i]
-}
-char = ""
-maxSum = sum
-i = 3
-while(i<arr.length){
-    sum += arr[i]-arr[i-3]
-    if(sum>maxSum){
-        maxSum=sum
-    }
-    i++
-}
-return [maxSum]
+// function maxSum(arr){
+// let maxSum = 0
+// let sum = 0
+// for(let i = 0 ; i < 3 ; i++){
+//     sum += arr[i]
+// }
+// char = ""
+// maxSum = sum
+// i = 3
+// while(i<arr.length){
+//     sum += arr[i]-arr[i-3]
+//     if(sum>maxSum){
+//         maxSum=sum
+//     }
+//     i++
+// }
+// return [maxSum]
 
+// }
+// let arr = [8,1,3,9,6,2,11,7]
+// console.log(maxSum(arr));
+
+
+// function secondFrequentNumber(arr) {
+//     let map = {};
+//     for (let i in arr) {
+//       map[arr[i]] = (map[arr[i]] || 0) + 1;
+//     }
+//     console.log(map);
+//     let secMax ;
+//     let max = 0;
+//     let thirdMax;
+//     for (let i in map) {
+//       if(map[i]>max){
+//         thirdMax = max
+//          max = map[i]
+//       }
+  
+//       else if(map[i]>thirdMax && map[i]<max){
+//           secMax = map[i]
+//       }
+//   }
+//       if(secMax===0){
+//           return "No 2nd freq is present"  
+//     }
+//     console.log(thirdMax);
+//     for(let i in map){
+//       if(map[i]=== thirdMax){
+//           return i
+//       }
+//     }
+//     return "no"
+//   }
+  
+//   console.log(secondFrequentNumber([1, 1,1, 2, 2,2, 3,3, 4, 5, 6, 7, 8, 1, 9]));
+
+
+  //************************************************ */
+//  function reverseInGroups(arr, n, k){
+//     k = k%n
+//     //reverseArr(arr,0,k-1)
+//     revNum(arr,0,k-1)
+//     revNum(arr,k,n-1)
+    
+//     return arr
+    
+// }
+
+//     function revNum(arr,left,right){
+// while(left<right){
+//     [arr[left],arr[right]] = [arr[right],arr[left]]
+//     left++
+//     right--
+// }
+// }
+
+// arr = [1,2,3,4,5]
+// n = arr.length
+// k = 3
+// console.log(reverseInGroups(arr,n,k));
+
+//QUick sort practice
+
+
+// function pivot(arr,left,right){
+// // left = 0
+// // right = arr.length-1
+
+// const swap = (arr, idx1, idx2) => {
+//   [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+// };
+
+// let pivot = arr[left]
+// let swapIdx = left
+// for(let i = left+1 ; i<=right; i++){
+//   if(arr[i]<pivot){
+//     swapIdx++
+//     swap(arr,swapIdx,i)
+//   }
+// }
+// swap(arr,left,swapIdx)
+// return swapIdx
+// }
+
+// function quickSort(arr,left=0,right=arr.length-1){
+//   // left = 0
+//   // right = arr.length-1
+//   if(left<right){
+//     let pivotIndex = pivot(arr,left,right) 
+//     quickSort(arr,left,pivotIndex-1)
+//     quickSort(arr,pivotIndex+1,right)
+//   }
+//   return arr
+// }
+
+
+// console.log(quickSort([4,8,2,1,5,7,6,3]))
+
+
+// //*****************************longest not repeating substring*** */
+// //i/p = abcabbcdabef
+
+// function longSub(str){
+//   let start = 0
+//   let end = 0
+//   let maxLength = 0
+//   let uniqueChar = new Set()
+//   while(end<str.length){
+//     if(!uniqueChar.has(str[end])){
+//       uniqueChar.add(str[end])
+//       end++
+//       maxLength = Math.max(maxLength,uniqueChar.size)
+//     }
+//     else{
+//       uniqueChar.delete(str[start])
+//       start++
+//     }
+
+//   }
+// return maxLength
+// }
+// let str = "abcabbcdabefzr"
+// console.log(longSub(str));
+
+
+//Checking square of an arrays*********************
+function squareSum(arr1,arr2){
+  let map = {}
+  for(let i of arr1){
+    map[i*i]=(map[i]||0)+1
+  }
+  for(let i of arr2){
+   if(!map[i]){
+    return false
+   }
+   else{
+    map[i]--
+   }
+  }
+  return true
 }
-let arr = [8,1,3,9,6,2,11,7]
-console.log(maxSum(arr));
+let arr1 = [1,2,3,4,5]
+let arr2 = [1,4,9,16,25]
+console.log(squareSum(arr1,arr2));
+
+
