@@ -383,21 +383,7 @@
 
 
 
-// function print1(){
-//     console.log("1");
-// }
 
-
-// let create = async function(){
-//     await setTimeout(create,3000);
-// }
-// function print3(){
-//     console.log("3");
-// }
-
-// print1()
- 
-// print3()
 
 
 
@@ -550,23 +536,316 @@
 
 
 //Checking square of an arrays*********************
-function squareSum(arr1,arr2){
-  let map = {}
-  for(let i of arr1){
-    map[i*i]=(map[i]||0)+1
+// function squareSum(arr1,arr2){
+//   let map = {}
+//   for(let i of arr1){
+//     map[i*i]=(map[i]||0)+1
+//   }
+//   for(let i of arr2){
+//    if(!map[i]){
+//     return false
+//    }
+//    else{
+//     map[i]--
+//    }
+//   }
+//   return true
+// }
+// let arr1 = [1,2,3,4,5]
+// let arr2 = [1,4,9,16,25]
+// console.log(squareSum(arr1,arr2));
+
+
+
+
+//** code to take input from user */
+// process.stdin.resume();
+// process.stdin.setEncoding('ascii');
+
+// var input_stdin = "";
+// var input_stdin_array = "";
+// var input_currentline = 0;
+
+// process.stdin.on('data', function (data) {
+//     input_stdin += data;
+// });
+
+// process.stdin.on('end', function () {
+//     input_stdin_array = input_stdin.split("\n");
+//     main();    
+// });
+
+// function readLine() {
+//     return input_stdin_array[input_currentline++];
+// }
+
+// function solution(){
+
+// }
+
+
+// function main() {
+//   var a = parseInt(readLine());
+   
+//   var res = solution(a);
+//   console.log(res);
+// }
+
+//*******************************count the vowels****************** */
+function vow(str){
+  let vowel = "AEIOUaeiou"
+  let count = 0
+  for(let i in str){
+    if(vowel.includes(str[i])){
+      count++
+    }
   }
-  for(let i of arr2){
-   if(!map[i]){
-    return false
-   }
-   else{
-    map[i]--
-   }
-  }
-  return true
+  return count
 }
-let arr1 = [1,2,3,4,5]
-let arr2 = [1,4,9,16,25]
-console.log(squareSum(arr1,arr2));
+console.log(vow("helloo"));
+
+//********************************max product sub array**** */
+
+
+
+
+
+
+
+
+//**************************shifting in linked list */
+// class Node{
+//   constructor(val){
+//       this.val = val;
+//       this.next = null;
+//   }
+// }
+
+// class SinglyLinkedList{
+//   constructor(){
+//       this.head = null;
+//       this.tail = null;
+//       this.length = 0;
+//   }
+//  push(val){
+//   let newNode = new Node(val)
+//   if(!this.head){
+//     this.head = newNode
+//     this.tail = this.head
+//   }
+//   else{
+//     this.tail.next = newNode
+//     this.tail = newNode
+//   }
+//   this.length++
+//   return this;
+//  }
+// pop(){
+// if(!this.head) return undefined
+// let current = this.head
+// let newTail = current
+// while(current.next){  //sudhanshu-> null == yes
+//   newTail = current                   //goodbye
+//   current = current.next              //sudhanhsu
+// }
+// this.tail = newTail
+// this.tail.next = null
+// this.length--
+// return current
+//   }
+//   shifting(){
+//     if(!this.head) return undefined
+//     let current = this.head
+//     this.head = current.next
+//     this.length--
+//     if(this.length===0){
+//       //this.head = null
+//       this.tail = null
+//     }
+//     return current
+    
+//   }
+
+//   unshift(val){
+//     let newNode = new Node(val)
+//     let currentHead = this.head
+//     if(!this.head){
+//       this.head = newNode;
+//       this.tail = this.head;
+//   }
+// else{
+//   newNode.next = currentHead
+//   this.head = newNode
+// }
+//   this.length++
+//   return this
+//   }
+
+//   get(index){
+//     if(index<0 || index>= this.length) return null
+//     let counter= 0
+//     let current = this.head
+//     while(counter !=index){
+//       current = current.next
+//       counter++
+//     }
+//     return current
+//   }
+//   set(index,val){
+//     let foundNode = this.get(index)
+//     if(foundNode){
+//       foundNode.val = val
+//       return true
+//     }
+//     return false
+//   }
+
+//   remove(index){
+//    if(index<0 || index>this.length) return undefined 
+//    if(index ==0) return this.shifting()
+//    if(index == this.length-1) return this.pop()
+//    let prevNode = this.get(index-1)
+//    let removedNode = prevNode.next
+//    prevNode.next = removedNode.next
+//    this.length--
+//    return removedNode
+    
+
+//   }
+// }
+
+
+// var list = new SinglyLinkedList()
+// list.push("HELLO")
+// list.push("GOODBYE")
+// list.push("sudhanshu sahu")
+// list.push("!!!!")
+// //list.unshift("hola")
+
+
+// list.remove(1)
+// //list.set(1,"My name is")
+
+// //console.log(list.remove(0));
+
+// console.log(list);
+
+
+//______________________________________________________________________________________________
+//*****************prime number*********** */
+// for(let i=10;i<50;i++){
+//   let c=0
+//   for(let j=2;j<=i;j++){
+//       if(i%j===0){
+//           c++
+//           console.log(c);
+//       }
+//   }
+//   if(c===1){
+//       console.log(i)
+//   }
+// }
+
+
+//________________________________________________________________________________________________
+// //sliding window
+// function maxSubStr(str){
+// let uniqueArr = new Set()
+// let maxEle = 0
+// let start =0
+// let end = 0
+// while(end<str.length){
+//   if(!uniqueArr.has(str[end])){
+//     uniqueArr.add(str[end])
+//     maxEle = Math.max(maxEle,uniqueArr.size)
+//     end++
+//   }
+//   else{
+//     uniqueArr.delete(str[start])
+//     start++
+//   }
+// }
+// return maxEle
+// }
+// let str = "abdeftttttdceas"
+// console.log(maxSubStr(str));
+
+
+
+// //******************** */
+// let arr = [1,2,3,4]
+// let arr1 = [1,2,3,4]
+// if(arr===arr1){
+//   console.log("true hai bhai");
+// }else console.log("false");
+
+
+
+
+
+
+//_______________________________________________________________________________________________________
+// //****************** */
+// function palidrome(x){
+//   if (x < 0) {
+//       return false;
+//   }
+//   // Store the number in a variable
+//   let number = x;
+//   // This will store the reverse of the number
+//   let reverse = 0;
+//   while (number > 0) {                         //125
+//       reverse = reverse * 10 + number % 10;  // 
+//       number = parseInt(number / 10);
+//   }
+//   return x === reverse;
+// };
+// let result = palidrome(121)
+// console.log(result);
+
+
+// function print1(){
+//   console.log("1");
+// }
+
+//_______________________________setTimeout()________________________________________________________
+// let create =  function(){
+//    setTimeout(create,3000);
+// }
+// function print3(){
+//   console.log("3");
+// }
+
+// create("")
+
+// print3()
+
+// function add() {
+//   for (let i = 0; i < 5; i++) {
+//     setTimeout(() => {
+//       console.log(i)
+//     }, 5000);
+//   }
+// }
+
+// add();
+
+
+
+// //__________________________________interview Questions_________________________________
+
+
+// (async()=>{function A(){
+
+//   console.log("a")
+//   await sleep(2)
+//   console.log("b")
+//   };
+//   A();
+//   async function sleep(seconds){
+//   //Write your code here
+//   }
+//   })();
+
 
 
